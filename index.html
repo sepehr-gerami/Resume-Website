@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Resume Website</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>sepehr Gerami</h1>
+        <button class="hamburger" id="hamburgerBtn">
+            ☰
+        </button>
+
+        <aside id="sidebar">
+            <ul>
+                <li> <a href="#HTML" >HTML</a></li>
+
+                <li> <a href="#CSS" >CSS</a></li>
+
+                <li><a href="#JavaScript" >JavaScript</a></li>
+
+                <li><a href="#React">React</a></li>
+
+                <li> <span>Communication</span></li>
+                
+                <li><a href="https://sepehr-gerami.github.io/responsive-test/"  target="_blank">project</a></li>
+
+                <li><a href="https://github.com/sepehr-gerami"  target="_blank">GitHub</a></li>
+            </ul>
+
+        </aside>
+       
+    </header>
+
+    <main>
+        <section class="skills">
+            <p>Front-End Developer CSS Grid/Flexbox Specialist</p>
+        </section>
+        <div class="container">
+            <h4>Skill</h4>
+
+            <section class="pro">
+                <p id="HTML">HTML</p>
+                <progress class="ph" value="100" max="100"></progress>
+            </section>
+            <hr>
+
+            <section class="pro-2">
+                <p id="CSS">CSS</p>
+                <progress class="pc" id="cssBar" value="100" max="100"></progress>
+            </section>
+            <hr>
+            <section class="pro-3">
+
+                <p id="JavaScript">JavaScript</p>
+                <progress class="js" id="jsBar" value="95" max="100"></progress>
+            </section>
+                <hr>
+            <section class="pro-4">
+                <p id="React">React</p>
+                <progress class="pr" id="ReactBar" value="90" max="100"></progress>
+            </section>
+
+        </div>
+    </main>
+
+
+    <footer>
+            <h2>Exoerience</h2>
+            <hr>
+            <p>Design and development of responsive layouts for personal projects and freelance portfolios</p>
+    </footer>
+    <script>
+        const btn = document.getElementById("hamburgerBtn");
+        const sidebar = document.getElementById("sidebar");
+
+        btn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+        });
+        document.addEventListener("click", (e) => {
+            if (!sidebar.contains(e.target) && !btn.contains(e.target)) {
+                sidebar.classList.remove("open");
+            }
+        });
+        document.querySelectorAll("aside a").forEach(link => {
+            link.addEventListener("click", () => {
+                sidebar.classList.remove("open");
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
